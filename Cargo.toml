@@ -7,3 +7,4 @@ edition = "2021"
 
 [dependencies]
 blas = "0.22.0"
+openblas-src = "0.10.5"
