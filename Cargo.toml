@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 blas = "0.22.0"
-openblas-src = { git = "https://github.com/blas-lapack-rs/openblas-src" }
+blas-src = { version = "0.9.0", features = ["openblas"] }
