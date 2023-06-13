@@ -18,10 +18,19 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - uses: Swatinem/rust-cache@v2
+    
+    - name: Setup vcpkg and restore artifacts
+      uses: lukka/run-vcpkg@v11
+      with:
+        vcpkgGitCommitId: 1ba9a2591f15af5900f2ce2b3e2bf31771e3ac48
+    
     - name: Install OpenBlas
       run: vcpkg install openblas --triplet x64-windows
+    
     - name: Build
-      run: cargo build --verbose
+      run: cargo build --verbose --features system
+    
     - name: Run tests
       run: cargo test --verbose
