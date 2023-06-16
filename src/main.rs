@@ -1,5 +1,5 @@
 extern crate blas;
-extern crate blas_src;
+extern crate openblas_src;
 
 use blas::*;
 
