@@ -30,7 +30,9 @@ jobs:
       run: vcpkg install openblas --triplet x64-windows
     
     - name: Build
-      run: cargo build --verbose --features system
+      run: |
+        cargo build openblas --verbose --features system
+        cargo build blas --verbose
     
     - name: Run tests
       run: cargo test --verbose
